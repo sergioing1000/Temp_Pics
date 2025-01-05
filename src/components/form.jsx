@@ -27,15 +27,29 @@ const PictureForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <img src={camera} alt="camera" />
+        <img src={camera} alt="camera" width={250} />
         <div>
-          <label htmlFor="imageUpload">📷 Take a Picture:</label>
+          <label
+            htmlFor="imageUpload"
+            style={{
+              cursor: "pointer",
+              display: "inline-block",
+              padding: "10px 20px",
+              backgroundColor: "#007BFF",
+              color: "#fff",
+              borderRadius: "5px",
+              textAlign: "center",
+            }}
+          >
+            CAMERA
+          </label>
           <input
             type="file"
             id="imageUpload"
             accept="image/*"
             capture="environment"
             onChange={handleImageChange}
+            style={{ display: "none" }} // Hides the default file input
           />
         </div>
       </div>
