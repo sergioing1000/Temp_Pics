@@ -1,4 +1,4 @@
-
+import camera from "../assets/camera.svg";
 
 import React, { useState } from "react";
 
@@ -27,14 +27,17 @@ const PictureForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="imageUpload">Upload a picture:</label>
-        <input
-          type="file"
-          id="imageUpload"
-          accept="image/*"
-          capture="environment"
-          onChange={handleImageChange}
-        />
+        <img src={camera} alt="camera" />
+        <div>
+          <label htmlFor="imageUpload">📷 Take a Picture:</label>
+          <input
+            type="file"
+            id="imageUpload"
+            accept="image/*"
+            capture="environment"
+            onChange={handleImageChange}
+          />
+        </div>
       </div>
       {preview && (
         <div>
