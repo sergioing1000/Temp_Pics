@@ -36,6 +36,7 @@ createRoot(document.getElementById("root")).render(
       <p>------------------------------------------</p>
       <p>------------------------------------------</p>
       <Profile/>
+      
     </Auth0Provider>
   </StrictMode>
 );
