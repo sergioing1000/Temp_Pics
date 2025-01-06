@@ -1,5 +1,4 @@
 import camera from "../assets/camera.svg";
-
 import React, { useState } from "react";
 
 const PictureForm = () => {
@@ -25,46 +24,48 @@ const PictureForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <img src={camera} alt="camera" width={250} />
+    <>
+      <form onSubmit={handleSubmit}>
         <div>
-          <label
-            htmlFor="imageUpload"
-            style={{
-              cursor: "pointer",
-              display: "inline-block",
-              padding: "10px 20px",
-              backgroundColor: "#007BFF",
-              color: "#fff",
-              borderRadius: "5px",
-              textAlign: "center",
-            }}
-          >
-            CAMERA
-          </label>
-          <input
-            type="file"
-            id="imageUpload"
-            accept="image/*"
-            capture="environment"
-            onChange={handleImageChange}
-            style={{ display: "none" }} // Hides the default file input
-          />
+          <img src={camera} alt="camera" width={250} />
+          <div>
+            <label
+              htmlFor="imageUpload"
+              style={{
+                cursor: "pointer",
+                display: "inline-block",
+                padding: "5px 5px",
+                backgroundColor: "#007BFF",
+                color: "#fff",
+                borderRadius: "5px",
+                textAlign: "center",
+              }}
+            >
+              📷
+            </label>
+            <input
+              type="file"
+              id="imageUpload"
+              accept="image/*"
+              capture="environment"
+              onChange={handleImageChange}
+              style={{ display: "none" }} // Hides the default file input
+            />
+          </div>
         </div>
-      </div>
-      {preview && (
-        <div>
-          <p>Preview:</p>
-          <img
-            src={preview}
-            alt="Preview"
-            style={{ width: "200px", height: "auto" }}
-          />
-        </div>
-      )}
-      <button type="submit">Submit</button>
-    </form>
+        {preview && (
+          <div>
+            <p>Preview:</p>
+            <img
+              src={preview}
+              alt="Preview"
+              style={{ width: "200px", height: "auto" }}
+            />
+          </div>
+        )}
+        <button type="submit">Submit</button>
+      </form>
+    </>
   );
 };
 
